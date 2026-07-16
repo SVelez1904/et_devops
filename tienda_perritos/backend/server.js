@@ -15,7 +15,7 @@ const {
 
 app.use(cors());
 app.use(express.json());
-
+   
 let pool;
 
 // Inicializar pool de conexiones
