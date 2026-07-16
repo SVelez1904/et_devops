@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - "frontend/**"
+      - "tienda_perritos/frontend/**"
 
 jobs:
   build-push-deploy-frontend:
