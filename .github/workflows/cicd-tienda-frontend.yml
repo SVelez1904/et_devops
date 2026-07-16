@@ -27,7 +27,7 @@ jobs:
 
     - name: Build imagen Frontend y push a ECR
       run: |
-        cd frontend
+        cd tienda_perritos/frontend
         docker build -t tienda-frontend .
         docker tag tienda-frontend:latest ${{ secrets.ECR_REPO_URL_FRONTEND }}:latest
         docker push ${{ secrets.ECR_REPO_URL_FRONTEND }}:latest
