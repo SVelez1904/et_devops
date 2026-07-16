@@ -8,7 +8,7 @@
 
 
 const API_BASE = "http://100.53.78.96:3001/api/productos";   
-
+    
      
 let editandoId = null;
        

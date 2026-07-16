@@ -12,7 +12,7 @@ const {
   DB_NAME = "tienda_perritos",
   DB_PORT = 3306,
 } = process.env;
-
+    
 app.use(cors());
 app.use(express.json());
         
