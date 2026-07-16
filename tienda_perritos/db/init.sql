@@ -1,13 +1,13 @@
--- 1. Asegurar privilegios de root para la red de Docker sin romper la ejecución
-ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'admin123';
+-- 1. Dar privilegios de conexión remota usando el método moderno de MySQL 8
+ALTER USER 'root'@'%' IDENTIFIED WITH caching_sha2_password BY 'admin123';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
--- 2. Crear la base de datos si no existe
+-- 2. Asegurar base de datos
 CREATE DATABASE IF NOT EXISTS tienda_perritos;
 USE tienda_perritos;
 
--- 3. Crear la tabla de productos
+-- 3. Estructura de la tabla
 CREATE TABLE IF NOT EXISTS productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS productos (
     stock INT NOT NULL
 );
 
--- 4. Insertar datos iniciales de prueba
+-- 4. Semilla de datos
 INSERT INTO productos (nombre, descripcion, precio, stock) VALUES
 ('Alimento Cachorro Premium', 'Sabor a pollo, razas pequenas', 19990, 15),
 ('Alimento Adulto Light', 'Control de peso, razas medianas', 17990, 8),
