@@ -1,0 +1,40 @@
+# Dependencias locales (¡La más importante!)
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Entorno y credenciales (Seguridad)
+.env
+.env.local
+.env.production
+.env.development
+*.pem
+*.key
+
+# Git y control de versiones
+.git
+.gitignore
+.gitattributes
+
+# IDEs y editores de texto
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Docker (Evita copiar los propios Dockerfiles o configuraciones al contenedor de Node)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Archivos de base de datos locales (Si tienes un volumen local de MySQL)
+.mysql_data/
+mysql/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
